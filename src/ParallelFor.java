@@ -18,7 +18,10 @@ public class ParallelFor {
 
     // omp parallel for public(sum)
     for(int i = 0; i < numbers.length; ++i) {
-      sum += numbers[i];
+      // omp critical
+      {
+        sum += numbers[i];
+      }
     }
 
     System.out.println("RESULT: " + sum);
