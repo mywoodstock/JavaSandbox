@@ -24,7 +24,7 @@ public class ParallelFor {
 
   public static void main(String[] args) {
     Random rand = new Random();
-    MyInteger[] numbers = new MyInteger[SIZE];
+    static MyInteger[] numbers = new MyInteger[SIZE];
 
     for(int i = 0; i < numbers.length; ++i) {
       numbers[i] = new MyInteger(rand.nextInt(MAX_RAND - MIN_RAND + 1) + MIN_RAND);
