@@ -4,7 +4,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class ParallelFor {
 
   private static final int MIN_RAND = 0;
-  private static final int MAX_RAND = 10000;
+  private static final int MAX_RAND = 10;
   private static final int SIZE = 6400000;
 
   public static void main(String[] args) {
