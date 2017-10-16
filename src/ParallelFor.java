@@ -11,8 +11,10 @@ public class ParallelFor {
     Random rand = new Random();
     int[] numbers = new int[SIZE];
 
+    int orig_sum = 0;
     for(int i = 0; i < numbers.length; ++i) {
       numbers[i] = rand.nextInt(MAX_RAND - MIN_RAND + 1) + MIN_RAND;
+      orig_sum += numbers[i];
     }
 
     int sum = 0, local_sum = 0;
