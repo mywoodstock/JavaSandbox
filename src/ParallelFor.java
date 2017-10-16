@@ -7,7 +7,7 @@ public class ParallelFor {
   private static final int MAX_RAND = 10000;
   private static final int SIZE = 6400000;
 
-  public void main(String[] args) {
+  public static void main(String[] args) {
     Random rand = new Random();
     int[] numbers = new int[SIZE];
 
