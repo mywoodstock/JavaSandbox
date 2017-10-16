@@ -20,10 +20,6 @@ public class ParallelFor {
     public MyInteger(MyInteger orig) {
       super(orig.get());
     }
-
-    public operator+(MyInteger val) {
-      return super + val;
-    }
   }
 
   public void main(String[] args) {
@@ -42,7 +38,7 @@ public class ParallelFor {
       for (int i = 0; i < numbers.length; ++i) {
         // omp critical
         {
-          sum = sum + numbers[i];
+          sum.add(numbers[i]);
         }
       }
       System.out.println("Thread " + OMP4J_THREAD_NUM + ": " + local_sum);
