@@ -30,7 +30,7 @@ public class ParallelFor {
       numbers[i] = new MyInteger(rand.nextInt(MAX_RAND - MIN_RAND + 1) + MIN_RAND);
     }
 
-    MyInteger sum = 0, local_sum = 0;
+    MyInteger sum = new MyInteger(0), local_sum = new MyInteger(0);
 
     // omp parallel
     {
