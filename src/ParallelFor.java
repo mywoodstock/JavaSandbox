@@ -20,6 +20,10 @@ public class ParallelFor {
     public MyInteger(MyInteger orig) {
       super(orig.get());
     }
+
+    public operator+(MyInteger val) {
+      return super + val;
+    }
   }
 
   public void main(String[] args) {
