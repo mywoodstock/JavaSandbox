@@ -12,7 +12,7 @@ public class ParallelFor {
     int[] numbers = new int[SIZE];
 
     for(int i = 0; i < numbers.length; ++i) {
-      numbers[i] = new MyInteger(rand.nextInt(MAX_RAND - MIN_RAND + 1) + MIN_RAND);
+      numbers[i] = rand.nextInt(MAX_RAND - MIN_RAND + 1) + MIN_RAND;
     }
 
     int sum = 0, local_sum = 0;
