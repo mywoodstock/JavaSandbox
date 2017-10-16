@@ -14,14 +14,18 @@ public class ParallelFor {
       numbers[i] = rand.nextInt(MAX_RAND - MIN_RAND + 1) + MIN_RAND;
     }
 
-    Integer sum = 0;
+    Integer sum = 0, local_sum = 0;
 
-    // omp parallel for public(sum)
-    for(int i = 0; i < numbers.length; ++i) {
-      // omp critical
-      {
-        sum += numbers[i];
+    // omp parallel
+    {
+      // omp for public(sum) private(local_sum)
+      for (int i = 0; i < numbers.length; ++i) {
+        // omp critical
+        {
+          sum += numbers[i];
+        }
       }
+      System.out.println("Thread " + OMP4J_THREAD_NUM + ": " + local_sum);
     }
 
     System.out.println("RESULT: " + sum);
