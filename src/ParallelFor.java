@@ -6,15 +6,30 @@ public class ParallelFor {
   private static final int MAX_RAND = 10000;
   private static final int SIZE = 6400000;
 
+  class MyInteger extends AtomicInteger {
+    /** Default constructor*/
+    public MyInteger() {
+      super(0);
+    }
+    /** Default constructor*/
+    public MyInteger(int val) {
+      super(val);
+    }
+    /** Copy constructor */
+    public MyInteger(MyInteger orig) {
+      super(orig.get());
+    }
+  }
+
   public static void main(String[] args) {
     Random rand = new Random();
-    Integer[] numbers = new Integer[SIZE];
+    MyInteger[] numbers = new MyInteger[SIZE];
 
     for(int i = 0; i < numbers.length; ++i) {
       numbers[i] = rand.nextInt(MAX_RAND - MIN_RAND + 1) + MIN_RAND;
     }
 
-    Integer sum = 0, local_sum = 0;
+    MyInteger sum = 0, local_sum = 0;
 
     // omp parallel
     {
