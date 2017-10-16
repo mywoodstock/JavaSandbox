@@ -19,7 +19,7 @@ public class ParallelFor {
 
     // omp parallel
     {
-      // omp parallel for public(sum) private(local_sum)
+      // omp parallel for private(local_sum)
       for (int i = 0; i < numbers.length; ++i) {
         {
           sum += numbers[i];
