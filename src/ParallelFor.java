@@ -17,6 +17,7 @@ public class ParallelFor {
       orig_sum += numbers[i];
     }
 
+    System.out.println("TARGET: " + orig_sum);
     int sum = 0, local_sum = 0;
 
     // omp parallel
